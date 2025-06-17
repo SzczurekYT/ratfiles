@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: let
+{ lib, pkgs, ... }:
+let
   username = "szczurek";
 in
 {
@@ -10,7 +11,7 @@ in
     ];
 
     file = {
-      
+
     };
 
     inherit username;
@@ -23,18 +24,20 @@ in
 
   programs.waybar = {
     enable = true;
-    settings = [{
-      height = 30;
-      layer = "top";
-      modules-left = [ ];
-      modules-center = [ "clock" ];
-      modules-right = [ ];
-      clock = {
-        timezone = "Europe/Warsaw";
-	locale = "pl_PL.utf8";
-        format-alt = "{:%Y-%m-%d}";
-        tooltip-format = "{:%Y-%m-%d | %H:%M}";
-      };
-    }];
+    settings = [
+      {
+        height = 30;
+        layer = "top";
+        modules-left = [ ];
+        modules-center = [ "clock" ];
+        modules-right = [ ];
+        clock = {
+          timezone = "Europe/Warsaw";
+          locale = "pl_PL.utf8";
+          format-alt = "{:%Y-%m-%d}";
+          tooltip-format = "{:%Y-%m-%d | %H:%M}";
+        };
+      }
+    ];
   };
 }

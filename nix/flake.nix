@@ -8,17 +8,19 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ...}:
+  outputs =
+    { nixpkgs, home-manager, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
-    in {
+    in
+    {
       homeConfigurations = {
         szczurek = home-manager.lib.homeManagerConfiguration {
-	  inherit pkgs;
-	  modules = [ ./home.nix ];
-	};
+          inherit pkgs;
+          modules = [ ./home.nix ];
+        };
       };
     };
 
