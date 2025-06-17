@@ -5,6 +5,8 @@ in
   home = {
     packages = with pkgs; [
       waybar
+
+      nixfmt-rfc-style
     ];
 
     file = {
