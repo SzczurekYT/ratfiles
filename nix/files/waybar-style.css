@@ -20,6 +20,7 @@ window#waybar.hidden {
 
 #cpu,
 #memory,
+#cava,
 #clock,
 #wireplumber {
     color: #181c38;
@@ -36,6 +37,13 @@ window#waybar.hidden {
 
 #memory {
     background-color: rgb(137, 180, 250);
+
+    padding: 0px 10px;
+}
+
+#cava {
+    color: rgb(203, 166, 247);
+    background-color: rgb(49, 50, 68);
 
     padding: 0px 10px;
 }

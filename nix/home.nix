@@ -7,6 +7,7 @@ in
     packages = with pkgs; [
       waybar
       nerd-fonts.meslo-lg
+      cava
 
       nixfmt-rfc-style
       nixd
@@ -33,6 +34,7 @@ in
         modules-left = [
           "cpu"
           "memory"
+          "cava"
         ];
         modules-center = [ "clock" ];
         modules-right = [ "wireplumber" ];
@@ -45,6 +47,23 @@ in
         memory = {
           interval = 1;
           format = "RAM  {used:0.1f}G/{total:0.1f}G";
+        };
+
+        cava = {
+          framerate = 60;
+          method = "pipewire";
+          bars = 20;
+          bar_delimiter = 0;
+          format-icons = [
+            "▁"
+            "▂"
+            "▃"
+            "▄"
+            "▅"
+            "▆"
+            "▇"
+            "█"
+          ];
         };
 
         clock = {
