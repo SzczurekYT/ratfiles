@@ -9,6 +9,7 @@ in
       nerd-fonts.meslo-lg
 
       nixfmt-rfc-style
+      nixd
     ];
 
     file = {
