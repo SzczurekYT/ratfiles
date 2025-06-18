@@ -28,3 +28,12 @@ window#waybar.hidden {
    padding: 7px 10px 3px 10px;
    margin: 6px 0px;
 }
+
+#wireplumber {
+   color: #181c38;
+   background-color: #a6e3a1;
+   border-radius: 4px;
+
+   padding: 0px 10px;
+   margin: 6px 6px; /* 6px on sides as it's the rightmost module */
+}

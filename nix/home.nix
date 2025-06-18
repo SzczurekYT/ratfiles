@@ -30,12 +30,24 @@ in
         layer = "top";
         modules-left = [ ];
         modules-center = [ "clock" ];
-        modules-right = [ ];
+        modules-right = [ "wireplumber" ];
         clock = {
           timezone = "Europe/Warsaw";
           locale = "pl_PL.utf8";
           format-alt = "{:%Y-%m-%d}";
           tooltip-format = "{:%Y-%m-%d | %H:%M}";
+        };
+
+        wireplumber = {
+          max-volume = 200;
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          format = "{icon} {volume}%";
+          format-muted = "";
+          format-icons = [
+            ""
+            ""
+            ""
+          ];
         };
       }
     ];
