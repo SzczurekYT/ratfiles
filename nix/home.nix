@@ -6,6 +6,7 @@ in
   home = {
     packages = with pkgs; [
       waybar
+      nerd-fonts.meslo-lg
 
       nixfmt-rfc-style
     ];
@@ -42,11 +43,11 @@ in
           max-volume = 200;
           on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           format = "{icon} {volume}%";
-          format-muted = "";
+          format-muted = "  󰖁  ";
           format-icons = [
-            ""
-            ""
-            ""
+            "󰕿"
+            "󰖀"
+            "󰕾"
           ];
         };
       }
