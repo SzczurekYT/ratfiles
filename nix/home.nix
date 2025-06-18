@@ -37,7 +37,10 @@ in
           "cava"
         ];
         modules-center = [ "clock" ];
-        modules-right = [ "wireplumber" ];
+        modules-right = [
+          "wireplumber"
+          "custom/power"
+        ];
 
         cpu = {
           interval = 1;
@@ -83,6 +86,19 @@ in
             "󰖀"
             "󰕾"
           ];
+        };
+
+        "custom/power" = {
+          format = " ⏻ ";
+          tooltip = false;
+          menu = "on-click";
+          menu-file = "${./files/power_menu.xml}";
+          menu-actions = {
+            logout = "hyprctl dispatch exit";
+            suspend = "systemctl sleep";
+            reboot = "reboot";
+            shutdown = "shutdown 0";
+          };
         };
       }
     ];

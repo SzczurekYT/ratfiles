@@ -22,14 +22,15 @@ window#waybar.hidden {
 #memory,
 #cava,
 #clock,
-#wireplumber {
+#wireplumber,
+#custom-power {
     color: #181c38;
     border-radius: 4px;
     margin: 5px 3px;
 }
 
 #cpu {
-    background-color: rgb(243, 139, 168);
+    background-color: rgb(235, 160, 172);
 
     padding: 0px 10px;
     margin: 5px 3px 5px 6px;
@@ -56,6 +57,13 @@ window#waybar.hidden {
 
 #wireplumber {
     background-color: #a6e3a1;
+
+    padding: 0px 10px;
+}
+
+#custom-power {
+    background-color: rgb(243, 139, 168);
+    font-size: 20px;
 
     padding: 0px 10px;
     margin: 5px 6px 5px 3px;
