@@ -1,6 +1,6 @@
 * {
     font-family: MesloLGL Nerd Font Mono, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 0;
     min-height: 0;
@@ -24,14 +24,14 @@ window#waybar.hidden {
 #wireplumber {
     color: #181c38;
     border-radius: 4px;
-    margin: 6px 3px;
+    margin: 5px 3px;
 }
 
 #cpu {
     background-color: rgb(243, 139, 168);
 
     padding: 0px 10px;
-    margin: 6px 3px 6px 6px;
+    margin: 5px 3px 5px 6px;
 }
 
 #memory {
@@ -43,12 +43,12 @@ window#waybar.hidden {
 #clock {
     background-color: rgb(153, 224, 255);
 
-    padding: 7px 10px 3px 10px;
+    padding: 4px 10px 3px 10px;
 }
 
 #wireplumber {
     background-color: #a6e3a1;
 
     padding: 0px 10px;
-    margin: 6px 6px 6px 3px;
+    margin: 5px 6px 5px 3px;
 }
