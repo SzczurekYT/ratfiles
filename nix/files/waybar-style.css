@@ -18,23 +18,37 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
+#cpu,
+#memory,
 #clock,
 #wireplumber {
     color: #181c38;
     border-radius: 4px;
+    margin: 6px 3px;
+}
+
+#cpu {
+    background-color: rgb(243, 139, 168);
+
+    padding: 0px 10px;
+    margin: 6px 3px 6px 6px;
+}
+
+#memory {
+    background-color: rgb(137, 180, 250);
+
+    padding: 0px 10px;
 }
 
 #clock {
     background-color: rgb(153, 224, 255);
 
     padding: 7px 10px 3px 10px;
-    margin: 6px 0px;
 }
 
 #wireplumber {
     background-color: #a6e3a1;
 
     padding: 0px 10px;
-    /* 6px on sides as it's the rightmost module */
-    margin: 6px 6px;
+    margin: 6px 6px 6px 3px;
 }

@@ -30,9 +30,23 @@ in
     settings = [
       {
         layer = "top";
-        modules-left = [ ];
+        modules-left = [
+          "cpu"
+          "memory"
+        ];
         modules-center = [ "clock" ];
         modules-right = [ "wireplumber" ];
+
+        cpu = {
+          interval = 1;
+          format = "CPU  {}%";
+        };
+
+        memory = {
+          interval = 1;
+          format = "RAM  {used:0.1f}G/{total:0.1f}G";
+        };
+
         clock = {
           timezone = "Europe/Warsaw";
           locale = "pl_PL.utf8";
