@@ -38,6 +38,7 @@ in
         ];
         modules-center = [ "clock" ];
         modules-right = [
+	  "battery"
           "wireplumber"
           "custom/power"
         ];
@@ -74,6 +75,23 @@ in
           locale = "pl_PL.utf8";
           format-alt = "{:%Y-%m-%d}";
           tooltip-format = "{:%Y-%m-%d | %H:%M}";
+        };
+
+	battery = {
+	  interval = 60;
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{capacity}% {icon}";
+          format-icons = [
+	    ""
+	    ""
+	    ""
+	    ""
+	    ""
+	  ];
+          max-length = 25;
         };
 
         wireplumber = {

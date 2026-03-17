@@ -22,6 +22,7 @@ window#waybar.hidden {
 #memory,
 #cava,
 #clock,
+#battery,
 #wireplumber,
 #custom-power {
     color: #181c38;
@@ -55,6 +56,12 @@ window#waybar.hidden {
     padding: 4px 10px 3px 10px;
 }
 
+#battery {
+    background-color: #ffc084;
+
+    padding: 0px 10px;
+}
+
 #wireplumber {
     background-color: #a6e3a1;
 
@@ -68,3 +75,4 @@ window#waybar.hidden {
     padding: 0px 10px;
     margin: 5px 6px 5px 3px;
 }
+
