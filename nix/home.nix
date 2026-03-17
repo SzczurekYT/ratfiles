@@ -44,7 +44,7 @@ in
 
         cpu = {
           interval = 1;
-          format = "CPU  {}%";
+          format = "CPU  {usage}%";
         };
 
         memory = {
