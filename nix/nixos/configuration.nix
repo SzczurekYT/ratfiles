@@ -8,7 +8,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "ratlab"; # Define your hostname.
+  networking.hostName = "rat-laptok";
 
   # Enable networking
   networking.networkmanager.enable = true;
