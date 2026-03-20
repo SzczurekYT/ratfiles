@@ -4,7 +4,7 @@
   services.flatpak.uninstallUnmanaged = false;
 
   services.flatpak.packages = [
-    
+    "com.discordapp.Discord"
   ];
 
 }
