@@ -12,6 +12,13 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  boot.kernelPatches = [
+    {
+      name = "audio-fix";
+      patch = ./audio_fix.patch;
+    }
+  ];
+
   networking.hostName = "rat-laptok";
 
   # Enable networking
