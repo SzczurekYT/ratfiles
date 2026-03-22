@@ -19,6 +19,9 @@
     }
   ];
 
+  hardware.sensor.iio.enable = true;
+  hardware.opentabletdriver.enable = true;
+
   networking.hostName = "rat-laptok";
 
   # Enable networking
