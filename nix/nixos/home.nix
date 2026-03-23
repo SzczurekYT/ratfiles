@@ -4,6 +4,7 @@
   imports = [
     nix-flatpak.homeManagerModules.nix-flatpak
     ./flatpak.nix
+    ./ssh.nix
   ];
   home.packages = [ pkgs.zsh ];
   programs.zsh.enable = true;
