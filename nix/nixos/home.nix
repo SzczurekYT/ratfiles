@@ -4,9 +4,11 @@
   imports = [
     nix-flatpak.homeManagerModules.nix-flatpak
     ./flatpak.nix
-    ./ssh.nix
+    ./ssh_and_gpg.nix
   ];
-  home.packages = [ pkgs.zsh ];
+  home.packages = with pkgs; [
+    zsh
+  ];
   programs.zsh.enable = true;
 
   programs.git = {
@@ -14,6 +16,9 @@
     settings = {
       user.name = "SzczurekYT";
       user.email = "szczurek@szczurek.yt";
+      user.signingkey = "1FB45ECD3CBE10B1";
+      commit.gpgsign = true;
+      tag.gpgSign = true;
       init.defaultBranch = "master";
       push.autoSetupRemote = true;
     };
