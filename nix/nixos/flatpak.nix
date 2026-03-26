@@ -1,6 +1,6 @@
 { lib, ... }: {
 
-  services.flatpak.remotes = [{
+  services.flatpak.remotes = lib.mkOptionDefault [{
     name = "plasma-keyboard-nightly"; location = "https://cdn.kde.org/flatpak/plasma-keyboard-nightly/plasma-keyboard-nightly.flatpakrepo";
   }];
 

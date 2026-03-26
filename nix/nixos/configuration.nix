@@ -106,6 +106,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+     iio-sensor-proxy
      neovim
      wget
      brave
