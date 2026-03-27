@@ -9,6 +9,6 @@
 
   services.flatpak.packages = [
     "com.discordapp.Discord"
-    "org.kde.plasma.keyboard"
+    { appId = "org.kde.plasma.keyboard"; origin = "plasma-keyboard-nightly"; }
   ]; 
 }
