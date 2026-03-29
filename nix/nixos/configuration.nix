@@ -21,6 +21,7 @@
 
   hardware.sensor.iio.enable = true;
   hardware.opentabletdriver.enable = true;
+  hardware.bluetooth.enable = true;
 
   networking.hostName = "rat-laptok";
 
