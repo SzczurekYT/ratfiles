@@ -3,6 +3,10 @@ let
   username = "szczurek";
 in
 {
+  imports = [
+    ./waybar.nix
+  ];
+
   home = {
     packages = with pkgs; [
       waybar
@@ -24,101 +28,4 @@ in
   };
 
   programs.home-manager.enable = true;
-
-  programs.waybar = {
-    enable = true;
-    style = builtins.readFile ./files/waybar-style.css;
-    settings = [
-      {
-        layer = "top";
-        modules-left = [
-          "cpu"
-          "memory"
-          "cava"
-        ];
-        modules-center = [ "clock" ];
-        modules-right = [
-	  "battery"
-          "wireplumber"
-          "custom/power"
-        ];
-
-        cpu = {
-          interval = 1;
-          format = "CPU  {usage}%";
-        };
-
-        memory = {
-          interval = 1;
-          format = "RAM  {used:0.1f}G/{total:0.1f}G";
-        };
-
-        cava = {
-          framerate = 60;
-          method = "pipewire";
-          bars = 20;
-          bar_delimiter = 0;
-          format-icons = [
-            "▁"
-            "▂"
-            "▃"
-            "▄"
-            "▅"
-            "▆"
-            "▇"
-            "█"
-          ];
-        };
-
-        clock = {
-          timezone = "Europe/Warsaw";
-          locale = "pl_PL.utf8";
-          format-alt = "{:%Y-%m-%d}";
-          tooltip-format = "{:%Y-%m-%d | %H:%M}";
-        };
-
-	battery = {
-	  interval = 60;
-          states = {
-            warning = 30;
-            critical = 15;
-          };
-          format = "{capacity}% {icon}";
-          format-icons = [
-	    ""
-	    ""
-	    ""
-	    ""
-	    ""
-	  ];
-          max-length = 25;
-        };
-
-        wireplumber = {
-          max-volume = 200;
-          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
-          format = "{icon} {volume}%";
-          format-muted = "  󰖁  ";
-          format-icons = [
-            "󰕿"
-            "󰖀"
-            "󰕾"
-          ];
-        };
-
-        "custom/power" = {
-          format = " ⏻ ";
-          tooltip = false;
-          menu = "on-click";
-          menu-file = "${./files/power_menu.xml}";
-          menu-actions = {
-            logout = "hyprctl dispatch exit";
-            suspend = "systemctl sleep";
-            reboot = "reboot";
-            shutdown = "shutdown 0";
-          };
-        };
-      }
-    ];
-  };
 }
