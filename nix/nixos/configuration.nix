@@ -3,6 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./video-tools.nix
     ];
 
   # Bootloader.
@@ -18,6 +19,15 @@
       patch = ./audio_fix.patch;
     }
   ];
+
+  boot = {
+    extraModulePackages = with config.boot.kernelPackages; [
+      v4l2loopback
+    ];
+    kernelModules = [
+      "v4l2loopback"
+    ];
+  };
 
   hardware.sensor.iio.enable = true;
   hardware.opentabletdriver.enable = true;
@@ -108,6 +118,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
      iio-sensor-proxy
+     config.boot.kernelPackages.v4l2loopback
      neovim
      wget
      brave
