@@ -119,6 +119,7 @@
      iio-sensor-proxy
      config.boot.kernelPackages.v4l2loopback
      neovim
+     tree
      wget
      brave
      git
