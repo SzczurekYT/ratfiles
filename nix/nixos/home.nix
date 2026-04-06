@@ -5,11 +5,8 @@
     nix-flatpak.homeManagerModules.nix-flatpak
     ./flatpak.nix
     ./ssh_and_gpg.nix
+    ./shell_config.nix
   ];
-  home.packages = with pkgs; [
-    zsh
-  ];
-  programs.zsh.enable = true;
 
   programs.git = {
     enable = true;

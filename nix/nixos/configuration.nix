@@ -103,6 +103,7 @@
       kdePackages.kate
     #  thunderbird
     ];
+    shell = pkgs.nushell;
   };
 
   # Set the default editor to neovim
@@ -124,6 +125,7 @@
      brave
      git
      krita
+     nushell
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
