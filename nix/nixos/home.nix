@@ -8,6 +8,10 @@
     ./shell_config.nix
   ];
 
+  home.packages = with pkgs; [
+    wl-clipboard
+  ];
+
   programs.git = {
     enable = true;
     settings = {
