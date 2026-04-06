@@ -24,7 +24,8 @@
   programs.brave = {
     enable = true;
     extensions = [
-      { id = "nngceckbapebfimnlniiiahkandclblb"; }
+      { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
+      { id = "dbepggeogbaibhgnhhndojpepiihcmeb"; } # Vimium
     ];
   };
 
