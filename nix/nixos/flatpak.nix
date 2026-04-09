@@ -11,5 +11,6 @@
     "com.discordapp.Discord"
     "com.super_productivity.SuperProductivity"
     { appId = "org.kde.plasma.keyboard"; origin = "plasma-keyboard-nightly"; }
+    "org.telegram.desktop"
   ]; 
 }
