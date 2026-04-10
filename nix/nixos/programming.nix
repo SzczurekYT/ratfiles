@@ -70,6 +70,7 @@
         "files.autoSave" = "afterDelay";
         "explorer.confirmDragAndDrop" = false;
         "diffEditor.ignoreTrimWhitespace" = false;
+        "workbench.secondarySideBar.defaultVisibility" = "hidden";
       };
     };
   };
