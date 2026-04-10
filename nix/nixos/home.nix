@@ -6,6 +6,7 @@
     ./flatpak.nix
     ./ssh_and_gpg.nix
     ./shell_config.nix
+    ./programming.nix
   ];
 
   home.packages = with pkgs; [
