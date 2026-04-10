@@ -42,6 +42,9 @@
         # Minecraft
         # Not packaged for nix :(
         # misodee.vscode-nbt
+
+        # FPGA
+        mshr-h.veriloghdl
       ];
 
       userSettings = {
