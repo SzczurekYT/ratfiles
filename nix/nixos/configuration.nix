@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./video-tools.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./video-tools.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -98,10 +97,14 @@
   users.users.szczurek = {
     isNormalUser = true;
     description = "Szczurek";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+    ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      #  thunderbird
     ];
     shell = pkgs.nushell;
   };
@@ -111,7 +114,10 @@
   # Wayland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -119,16 +125,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     iio-sensor-proxy
-     config.boot.kernelPackages.v4l2loopback
-     neovim
-     tree
-     wget
-     brave
-     git
-     krita
-     nushell
-     python3
+    iio-sensor-proxy
+    config.boot.kernelPackages.v4l2loopback
+    neovim
+    tree
+    wget
+    brave
+    git
+    krita
+    nushell
+    python3
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

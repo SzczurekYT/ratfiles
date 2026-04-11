@@ -1,4 +1,9 @@
-{ config, pkgs, nix-flatpak, ... }:
+{
+  config,
+  pkgs,
+  nix-flatpak,
+  ...
+}:
 
 {
   imports = [
@@ -11,7 +16,7 @@
 
   home.packages = with pkgs; [
     wl-clipboard
-    nixfmt 
+    nixfmt
   ];
 
   programs.git = {
