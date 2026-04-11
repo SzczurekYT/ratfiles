@@ -11,6 +11,7 @@
 
   home.packages = with pkgs; [
     wl-clipboard
+    nixfmt 
   ];
 
   programs.git = {
