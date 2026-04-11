@@ -98,7 +98,7 @@
   users.users.szczurek = {
     isNormalUser = true;
     description = "Szczurek";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
