@@ -13,7 +13,7 @@
         ];
         modules-center = [ "clock" ];
         modules-right = [
-	  "battery"
+          "battery"
           "wireplumber"
           "custom/power"
         ];
@@ -52,20 +52,20 @@
           tooltip-format = "{:%Y-%m-%d | %H:%M}";
         };
 
-	battery = {
-	  interval = 60;
+        battery = {
+          interval = 60;
           states = {
             warning = 30;
             critical = 15;
           };
           format = "{capacity}% {icon}";
           format-icons = [
-	    ""
-	    ""
-	    ""
-	    ""
-	    ""
-	  ];
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
           max-length = 25;
         };
 
