@@ -4,7 +4,10 @@
   nix-flatpak,
   ...
 }:
-
+let
+  username = "szczurek";
+  home = "/home/${username}";
+in
 {
   imports = [
     nix-flatpak.homeManagerModules.nix-flatpak
@@ -13,6 +16,21 @@
     ./shell_config.nix
     ./programming.nix
   ];
+
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = "${home}/Pulpit";
+      download = "${home}/Pobrane";
+      documents = "${home}/Dokumenty";
+      pictures = "${home}/Obrazy";
+      videos = "${home}/Wideo";
+      music = "${home}/Muzyka";
+      templates = "${home}/Experiments";
+    };
+  };
 
   home.packages = with pkgs; [
     wl-clipboard
