@@ -1,7 +1,6 @@
 {
-  config,
   pkgs,
-  nix-flatpak,
+  config,
   ...
 }:
 let
@@ -10,7 +9,6 @@ let
 in
 {
   imports = [
-    nix-flatpak.homeManagerModules.nix-flatpak
     ./flatpak.nix
     ./ssh_and_gpg.nix
     ./shell_config.nix
@@ -37,6 +35,11 @@ in
     nixfmt
   ];
 
+  home = {
+    username = config.currentSystem.username;
+    homeDirectory = config.currentSystem.homeDirectory;
+  };
+
   programs.git = {
     enable = true;
     settings = {
@@ -60,5 +63,5 @@ in
 
   # The state version is required and should stay at the version you
   # originally installed.
-  home.stateVersion = "25.11";
+  home.stateVersion = config.currentSystem.stateVersion.homeManager;
 }

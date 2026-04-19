@@ -1,6 +1,8 @@
-{ lib, ... }:
-{
-
+{ config, lib, ... }:
+let
+  hasFlatpak = builtins.elem "nixos" config.currentSystem.features;
+in {
+  config = lib.mkIf hasFlatpak {
   services.flatpak.remotes = lib.mkOptionDefault [
     {
       name = "plasma-keyboard-nightly";
@@ -19,5 +21,5 @@
       origin = "plasma-keyboard-nightly";
     }
     "org.telegram.desktop"
-  ];
+  ];};
 }

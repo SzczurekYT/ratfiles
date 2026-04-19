@@ -2,7 +2,7 @@
 {
   programs.waybar = {
     enable = true;
-    style = builtins.readFile ./files/waybar-style.css;
+    style = builtins.readFile ./files/waybar_style.css;
     settings = [
       {
         layer = "top";
