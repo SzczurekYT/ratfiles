@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     ./hardware-configuration.nix
@@ -12,26 +17,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.kernelPatches = [
-    {
-      name = "audio-fix";
-      patch = ./audio_fix.patch;
-    }
-  ];
-
-  boot = {
-    extraModulePackages = with config.boot.kernelPackages; [
-      v4l2loopback
-    ];
-    kernelModules = [
-      "v4l2loopback"
-    ];
-  };
-
-  hardware.sensor.iio.enable = true;
-  hardware.bluetooth.enable = true;
-
-  networking.hostName = "rat-laptok";
+  networking.hostName = config.currentSystem.hostname;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -94,9 +80,9 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.szczurek = {
+  users.users.${config.currentSystem.username} = {
     isNormalUser = true;
-    description = "Szczurek";
+    description = lib.strings.toSentenceCase config.currentSystem.username;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -162,6 +148,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
-
+  system.stateVersion = config.currentSystem.stateVersion.system; # Did you read the comment?
 }
