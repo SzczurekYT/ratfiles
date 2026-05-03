@@ -5,4 +5,6 @@ let
     modules = [ (./. + "/${name}") ];
   };
 in
-{ result = builtins.elem "nixos" result.config.currentSystem.features; }
+{
+  result = builtins.elem "nixos" result.config.currentSystem.features;
+}

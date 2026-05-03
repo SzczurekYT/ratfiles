@@ -1,9 +1,11 @@
 {
-  featureOnlyModule = (feature: moduleFn:
-    { config, lib, ... } @args:
+  featureOnlyModule = (
+    feature: moduleFn:
+    { config, lib, ... }@args:
     let
       hasFeature = builtins.elem feature config.currentSystem.features;
-    in {
+    in
+    {
       config = lib.mkIf hasFeature (moduleFn args);
     }
   );

@@ -6,7 +6,7 @@
     homeDirectory = lib.mkOption { type = lib.types.str; };
     features = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [];
+      default = [ ];
     };
     stateVersion = {
       system = lib.mkOption { type = lib.types.str; };
