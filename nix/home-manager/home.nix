@@ -1,11 +1,13 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }:
 let
   username = "szczurek";
   home = "/home/${username}";
+  isNixos = builtins.elem "nixos" config.currentSystem.features;
 in
 {
   imports = [
@@ -13,6 +15,7 @@ in
     ./ssh_and_gpg.nix
     ./shell_config.nix
     ./programming.nix
+    ./waybar.nix
   ];
 
   xdg = {
@@ -26,7 +29,7 @@ in
       pictures = "${home}/Obrazy";
       videos = "${home}/Wideo";
       music = "${home}/Muzyka";
-      templates = "${home}/Experiments";
+      templates = "${home}/Szablony";
     };
   };
 
@@ -45,15 +48,19 @@ in
     settings = {
       user.name = "SzczurekYT";
       user.email = "szczurek@szczurek.yt";
-      user.signingkey = "1FB45ECD3CBE10B1";
       commit.gpgsign = true;
       tag.gpgSign = true;
       init.defaultBranch = "master";
       push.autoSetupRemote = true;
+      advice.skippedCherryPicks = false;
+      alias = {
+        shlog = "!git log --oneline | head -n 15";
+        whoami = "!echo \\\"$(git config user.name) <$(git config user.email)>\\\"";
+      };
     };
   };
 
-  programs.brave = {
+  programs.brave = lib.mkIf isNixos {
     enable = true;
     extensions = [
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
@@ -64,4 +71,6 @@ in
   # The state version is required and should stay at the version you
   # originally installed.
   home.stateVersion = config.currentSystem.stateVersion.homeManager;
+
+  programs.home-manager.enable = true;
 }
