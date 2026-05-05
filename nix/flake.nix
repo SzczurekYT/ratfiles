@@ -40,30 +40,30 @@
       );
     in
     {
-      nixosConfigurations = pkgs.lib.genAttrs systemList (
+      nixosConfigurations = nixpkgs.lib.genAttrs systemList (
         name:
         nixpkgs.lib.nixosSystem {
-          modules =
-            [
-              ./nixos/configuration.nix
-              (currentSystemModule name)
-              (
-                { config, ... }:
-                home-manager.nixosModules.home-manager {
-                  home-manager.useGlobalPkgs = true;
-                  home-manager.useUserPackages = true;
+          modules = [
+            (nixosHardwareModule name)
+            (currentSystemModule name)
+            ./nixos/configuration.nix
+            (
+              { config, ... }:
+              {
+                imports = [ home-manager.nixosModules.home-manager ];
 
-                  home-manager.users.${config.currentSystem.username} =
-                    { ... }:
-                    {
-                      imports = hmModules name;
-                    };
-                  home-manager.extraSpecialArgs = { inherit nix-flatpak; };
-                }
-              )
-            ]
-            ++ nixpkgs.lib.optional (builtins.pathExists (nixosModule name)) (nixosModule name)
-            ++ nixpkgs.lib.optional (builtins.pathExists (nixosHardwareModule name)) (nixosModule name);
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+
+                home-manager.users.${config.currentSystem.username} =
+                  { ... }:
+                  {
+                    imports = hmModules name;
+                  };
+              }
+            )
+          ]
+          ++ nixpkgs.lib.optional (builtins.pathExists (nixosModule name)) (nixosModule name);
         }
       );
       homeConfigurations = pkgs.lib.genAttrs systemList (
