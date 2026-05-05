@@ -43,21 +43,8 @@ in
     homeDirectory = config.currentSystem.homeDirectory;
   };
 
-  programs.git = {
-    enable = true;
-    settings = {
-      user.name = "SzczurekYT";
-      user.email = "szczurek@szczurek.yt";
-      commit.gpgsign = true;
-      tag.gpgSign = true;
-      init.defaultBranch = "master";
-      push.autoSetupRemote = true;
-      advice.skippedCherryPicks = false;
-      alias = {
-        shlog = "!git log --oneline | head -n 15";
-        whoami = "!echo \\\"$(git config user.name) <$(git config user.email)>\\\"";
-      };
-    };
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = 1;
   };
 
   programs.brave = lib.mkIf isNixos {
