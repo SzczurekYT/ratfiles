@@ -6,7 +6,7 @@
     username = "szczurek";
     hostname = "rat-laptok";
 
-    features = [ "nixos" ];
+    features = [ "nixos" "hyprland" ];
 
     stateVersion = {
       system = "25.11";
