@@ -2,6 +2,9 @@
 
 {
   home.packages = with pkgs; [
+    ripgrep
+    nixfmt
+    nixfmt-tree
     nixd
   ];
   

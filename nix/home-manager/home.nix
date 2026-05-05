@@ -35,7 +35,6 @@ in
 
   home.packages = with pkgs; [
     wl-clipboard
-    nixfmt
   ];
 
   home = {
