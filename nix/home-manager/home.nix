@@ -16,6 +16,7 @@ in
     ./shell_config.nix
     ./programming.nix
     ./waybar.nix
+    ./wezterm.nix
   ];
 
   xdg = {
