@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    nixd
+  ];
+  
   programs.git = {
     enable = true;
     settings = {
