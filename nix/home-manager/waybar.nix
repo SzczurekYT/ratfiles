@@ -5,7 +5,7 @@
       nerd-fonts.meslo-lg
       cava
     ];
-  
+
     programs.waybar = {
       enable = true;
       style = builtins.readFile ./files/waybar_style.css;

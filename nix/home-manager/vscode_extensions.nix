@@ -38,7 +38,7 @@ let
     # Flutter
     dart-code.dart-code
     dart-code.flutter
-    
+
     # C/Cpp
     ms-vscode.cpptools-extension-pack
 
@@ -56,7 +56,7 @@ let
     # FPGA
     mshr-h.veriloghdl
   ];
-  
+
   marketplaceVscodeExts = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
     # General
     {
