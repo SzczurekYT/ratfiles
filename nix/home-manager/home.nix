@@ -19,6 +19,8 @@ in
     ./wezterm.nix
   ];
 
+  targets.genericLinux.enable = true;
+
   xdg = {
     enable = true;
     userDirs = {
