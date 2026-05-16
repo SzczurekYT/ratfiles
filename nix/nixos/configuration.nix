@@ -121,6 +121,7 @@
     krita
     nushell
     python3
+    openfpgaloader
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
