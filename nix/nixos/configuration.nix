@@ -86,6 +86,7 @@
       "networkmanager"
       "wheel"
       "dialout"
+      "video"
     ];
     packages = with pkgs; [
       kdePackages.kate

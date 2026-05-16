@@ -17,4 +17,5 @@
 
   hardware.sensor.iio.enable = true;
   hardware.bluetooth.enable = true;
+  hardware.amd-npu.enable = true;
 }

@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    nix-amd-npu.url = "github:robcohen/nix-amd-npu";
   };
 
   outputs =
@@ -15,6 +16,7 @@
       nixpkgs,
       home-manager,
       nix-flatpak,
+      nix-amd-npu,
       ...
     }:
     let
@@ -43,10 +45,13 @@
       nixosConfigurations = nixpkgs.lib.genAttrs systemList (
         name:
         nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit nix-amd-npu; };
           modules = [
             (nixosHardwareModule name)
             (currentSystemModule name)
             ./nixos/configuration.nix
+            ./nixos/amd-npu.nix
+            nix-amd-npu.nixosModules.default
             (
               { config, ... }:
               {
