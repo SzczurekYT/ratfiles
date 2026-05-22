@@ -16,6 +16,7 @@
       "com.discordapp.Discord"
       "com.super_productivity.SuperProductivity"
       "org.telegram.desktop"
+      "in.cinny.Cinny"
       {
         appId = "org.kde.plasma.keyboard";
         origin = "plasma-keyboard-nightly";
