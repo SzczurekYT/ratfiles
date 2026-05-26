@@ -1,5 +1,22 @@
-{ pkgs, ... }:
-
+{ pkgs, lib, ... }:
+let
+  # gclient is a google's git helper
+  # needed to build Flutter engine locally
+  gclientAddresses = [
+    "https://android.googlesource.com"
+    "https://aomedia.googlesource.com"
+    "https://beto-core.googlesource.com"
+    "https://boringssl.googlesource.com"
+    "https://chromium.googlesource.com"
+    "https://chrome-internal.googlesource.com"
+    "https://dawn.googlesource.com"
+    "https://pdfium.googlesource.com"
+    "https://quiche.googlesource.com"
+    "https://skia.googlesource.com"
+    "https://swiftshader.googlesource.com"
+    "https://webrtc.googlesource.com"
+  ];
+in
 {
   home.packages = with pkgs; [
     ripgrep
@@ -23,6 +40,10 @@
         whoami = "!echo \\\"$(git config user.name) <$(git config user.email)>\\\"";
       };
       core.editor = "hx";
+      credential = lib.genAttrs gclientAddresses (_: {
+        helper = "luci";
+        useHttpPath = "yes";
+      });
     };
   };
 
