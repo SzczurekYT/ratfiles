@@ -40,6 +40,7 @@ let
     dart-code.flutter
 
     # C/Cpp
+    ms-vscode.cpptools
     ms-vscode.cpptools-extension-pack
 
     # Godot
