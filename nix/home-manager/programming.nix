@@ -27,6 +27,8 @@ in
 
   programs.git = {
     enable = true;
+    # For building GoZen we need SVN support
+    package = pkgs.gitSVN;
     settings = {
       user.name = "SzczurekYT";
       user.email = "szczurek@szczurek.yt";
