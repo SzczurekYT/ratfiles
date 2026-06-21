@@ -22,6 +22,7 @@
         shlog = "!git log --oneline | head -n 15";
         whoami = "!echo \\\"$(git config user.name) <$(git config user.email)>\\\"";
       };
+      core.editor = "hx";
     };
   };
 
