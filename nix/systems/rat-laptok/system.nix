@@ -17,6 +17,11 @@
     })
   ];
 
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 16*1024;
+  }];
+
   hardware.sensor.iio.enable = true;
   hardware.bluetooth.enable = true;
   hardware.amd-npu.enable = true;
