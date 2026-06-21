@@ -5,9 +5,9 @@
   {
     programs.ssh.enable = true;
     programs.ssh.enableDefaultConfig = false;
-    programs.ssh.matchBlocks = {
-      kot = {
-        hostname = "192.168.88.136";
+    programs.ssh.settings = {
+      "kot" = {
+        HostName = "192.168.88.136";
       };
     };
 

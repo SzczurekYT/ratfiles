@@ -25,6 +25,7 @@ in
     enable = true;
     userDirs = {
       enable = true;
+      setSessionVariables = true;
       createDirectories = true;
       desktop = "${home}/Pulpit";
       download = "${home}/Pobrane";
