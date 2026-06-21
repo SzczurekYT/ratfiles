@@ -120,7 +120,6 @@
     git
     krita
     nushell
-    python3
     openfpgaloader
     ffmpeg
     vlc
