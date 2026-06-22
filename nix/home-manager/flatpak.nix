@@ -26,6 +26,7 @@
         appId = "com.hypixel.HytaleLauncher";
         sha256 = "113427b65bfbcdfb96072b05e5e35e00e341ac269aea5e918ef38f87a91b4842";
       }
+      "com.lunarclient.LunarClient"
     ];
   }
 )
