@@ -56,6 +56,11 @@
   # Flatpak
   services.flatpak.enable = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   # Configure console keymap
   console.keyMap = "pl2";
 
