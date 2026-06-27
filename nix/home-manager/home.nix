@@ -59,6 +59,8 @@ in
     ];
   };
 
+  services.kdeconnect.enable = isNixos;
+
   # The state version is required and should stay at the version you
   # originally installed.
   home.stateVersion = config.currentSystem.stateVersion.homeManager;
