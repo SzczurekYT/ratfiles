@@ -47,6 +47,10 @@
     enable = true;
     settings = {
       theme = "catppuccin_mocha";
+      editor = {
+        statusline.right = ["diagnostics" "primary-selection-length" "selections" "position" "file-encoding"];
+        soft-wrap.enable = true;
+      };
     };
   };
 }
