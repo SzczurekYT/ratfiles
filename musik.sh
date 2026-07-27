@@ -11,5 +11,5 @@ fi
 if kdialog --title "Musik?" --yesno "Play musik?" ; then
 	mpv --loop --volume=35 --force-window --wayland-app-id=mpv-musik "$MUSIK_FILE" &
 	sleep 1
-	hyprctl dispatch movetoworkspacesilent 10,class:mpv-musik
+	hyprctl dispatch 'hl.dsp.window.move({ workspace = "10", follow = false, window = "class:^mpv-musik$" })'
 fi
