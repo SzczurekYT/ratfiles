@@ -95,6 +95,7 @@
     ];
     packages = with pkgs; [
       kdePackages.kate
+      kdePackages.plasma-keyboard
       #  thunderbird
     ];
     shell = pkgs.nushell;

@@ -1,14 +1,7 @@
 # I don't want to mess with flatpaks on my non nixos systems for now
 (import ../helpers.nix).featureOnlyModule "nixos" (
-  { lib, ... }:
+  {  ... }:
   {
-    services.flatpak.remotes = lib.mkOptionDefault [
-      {
-        name = "plasma-keyboard-nightly";
-        location = "https://cdn.kde.org/flatpak/plasma-keyboard-nightly/plasma-keyboard-nightly.flatpakrepo";
-      }
-    ];
-
     services.flatpak.update.auto.enable = false;
     services.flatpak.uninstallUnmanaged = false;
 
@@ -17,10 +10,6 @@
       "com.super_productivity.SuperProductivity"
       "org.telegram.desktop"
       "in.cinny.Cinny"
-      {
-        appId = "org.kde.plasma.keyboard";
-        origin = "plasma-keyboard-nightly";
-      }
       {
         bundle = "file://${./files/hytale-launcher-latest.flatpak}";
         appId = "com.hypixel.HytaleLauncher";
