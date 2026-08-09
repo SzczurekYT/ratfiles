@@ -112,6 +112,12 @@ let
       version = "4.8.0";
       sha256 = "sha256-U7YyHg21/UaYsOCJg+wPEW91b4ca9zbt5xFV7tVgz6c=";
     }
+    {
+      name = "syntax-mcfunction";
+      publisher = "MinecraftCommands";
+      version = "1.0.1";
+      sha256 = "sha256-AhDAWJtdtWxL6iBBrJnNHZdn4ucaz3/HBdrq6QX9OT4=";
+    }
 
     # Other
     {
