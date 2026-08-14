@@ -198,4 +198,14 @@ in
       };
     };
   };
+
+  programs.opencode = {
+    enable = true;
+    settings = {
+      autoupdate = false;
+      permission = {
+        websearch = "allow";
+      };
+    };
+  };
 }
