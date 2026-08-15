@@ -19,10 +19,16 @@ let
 in
 {
   home.packages = with pkgs; [
+    # Tools
     ripgrep
+
+    # Nix
     nixfmt
     nixfmt-tree
     nixd
+
+    # Time tracking
+    wakatime-cli
   ];
 
   programs.git = {
@@ -206,6 +212,9 @@ in
       permission = {
         websearch = "allow";
       };
+      plugin = [
+        "opencode-wakatime"
+      ];
     };
   };
 }
