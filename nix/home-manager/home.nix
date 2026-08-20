@@ -41,6 +41,7 @@ in
     wl-clipboard
     xournalpp
     anytype
+    godotPackages_4_7.godot
   ];
 
   home = {
