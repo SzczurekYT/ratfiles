@@ -216,5 +216,6 @@ in
         "opencode-wakatime"
       ];
     };
+    skills = ./files/programming/skills;
   };
 }
