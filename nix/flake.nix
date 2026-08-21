@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,11 +18,16 @@
       home-manager,
       nix-flatpak,
       nix-amd-npu,
+      nixpkgs-unstable,
       ...
     }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      pkgsUnstable = import nixpkgs-unstable {
         inherit system;
         config.allowUnfree = true;
       };
@@ -45,7 +51,7 @@
       nixosConfigurations = nixpkgs.lib.genAttrs systemList (
         name:
         nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit nix-amd-npu; };
+          specialArgs = { inherit nix-amd-npu pkgsUnstable; };
           modules = [
             (nixosHardwareModule name)
             (currentSystemModule name)
@@ -65,6 +71,9 @@
                   {
                     imports = hmModules name;
                   };
+                home-manager.extraSpecialArgs = {
+                  inherit pkgsUnstable;
+                };
               }
             )
           ]
@@ -76,6 +85,9 @@
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = hmModules name;
+          extraSpecialArgs = {
+            inherit pkgsUnstable;
+          };
         }
       );
     };

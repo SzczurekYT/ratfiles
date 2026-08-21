@@ -15,6 +15,7 @@ in
     ./ssh_and_gpg.nix
     ./shell_config.nix
     ./programming.nix
+    ./hyprland.nix
     ./waybar.nix
     ./wezterm.nix
   ];
