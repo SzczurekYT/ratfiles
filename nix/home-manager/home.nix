@@ -43,6 +43,7 @@ in
     xournalpp
     anytype
     godotPackages_4_7.godot
+    localsend
   ];
 
   home = {
